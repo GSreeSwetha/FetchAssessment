@@ -7,7 +7,6 @@ OS: Windows
 1. connect to ec2 instance using ppk file: fetch_project_key
 
 open putty:
-
  Host name: 13.233.164.102
  mode: SSH
  go to category section-> SSH -> Auth -> credentials -> browse the ppk file in private key file for authentication -> click open
@@ -17,21 +16,21 @@ open putty:
 execute command -> ls
 
 Here you will find available files in your instance. So, now you have to create files in the instance 
-steps to create a file. Copy the content of the file and follow these commands :
-vi dependencies.sh
-set the file in insert mode with -> click ESC and click i
-right click to paste the content
-click ESC -> :wq
-follow the process to create files download_docker.sh, create_container.sh, masking.py
-execute the command ->   ls -lrt
-you will find all the files created 
-Now give executive permissions for the files with command -> chmod 777 *
+Steps to create a file. Copy the content of the file and follow these commands : <br />
+vi dependencies.sh <br />
+set the file in insert mode with -> click ESC and click i <br />
+right click to paste the content <br />
+click ESC -> :wq <br />
+follow the process to create files download_docker.sh, create_container.sh, masking.py <br />
+execute the command ->   ls -lrt <br />
+you will find all the files created <br />
+Now give executive permissions for the files with command -> chmod 777 * <br />
 
 3. execution of files
-execute the files by following these commands one by one:
-./dependencies.sh  (if a pop-up displays-> hit enter)
-./download_docker.sh  (If you find any issue with this file, restart Putty and execute this command)
-./create_docker.sh
+execute the files by following these commands one by one: <br />
+./dependencies.sh  (if a pop-up displays-> hit enter) <br />
+./download_docker.sh  (If you find any issue with this file, restart Putty and execute this command) <br />
+./create_docker.sh <br />
 python3 masking.py
 
 4. connect to Postgres and check the data
@@ -41,6 +40,6 @@ docker run -it --rm --link postgres-swetha:postgres fetchdocker/data-takehome-po
 
 password: postgres
 
-execute this command to list the databases : \l
-execute this command to connect to postgres : \c postgres
+execute this command to list the databases : \l <br />
+execute this command to connect to postgres : \c postgres <br />
 execute this command to check the masked data: select * from user_logins;
