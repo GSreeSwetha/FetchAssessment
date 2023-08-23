@@ -1,21 +1,21 @@
 # FetchAssessment
 Write a small application that can read from an AWS SQS Queue, transform that data, then write to a Postgres database. 
 
-#Instructions for execution
+#Instructions for execution <br />
 OS: Windows
 
 1. connect to ec2 instance using ppk file: fetch_project_key
 
-open putty:
- Host name: 13.233.164.102
- mode: SSH
- go to category section-> SSH -> Auth -> credentials -> browse the ppk file in private key file for authentication -> click open
+open putty: <br />
+ Host name: 13.233.164.102 <br />
+ mode: SSH <br />
+ go to category section-> SSH -> Auth -> credentials -> browse the ppk file in private key file for authentication -> click open <br />
  login as-> ubuntu
  
 2. creation of files:
 execute command -> ls
 
-Here you will find available files in your instance. So, now you have to create files in the instance 
+Here you will find available files in your instance. So, now you have to create files in the instance. <br />
 Steps to create a file. Copy the content of the file and follow these commands : <br />
 vi dependencies.sh <br />
 set the file in insert mode with -> click ESC and click i <br />
