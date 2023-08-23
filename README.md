@@ -43,3 +43,6 @@ password: postgres
 execute this command to list the databases : \l <br />
 execute this command to connect to postgres : \c postgres <br />
 execute this command to check the masked data: select * from user_logins;
+
+-------Questions ---
+The answers to the required questions can be found in the Answers.docx file
