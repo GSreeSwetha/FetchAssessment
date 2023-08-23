@@ -1,0 +1,47 @@
+OS: Windows
+
+1. connect to ec2 instance using ppk file: fetch_project_key
+
+open putty:
+
+ Host name : 13.233.164.102
+ go to category -> Auth -> credentials -> browse the ppk file in private key file for authentication -> click open
+ login as-> ubuntu
+ 
+2. creation of files:
+execute command -> ls
+
+Here you will not find any files. So, now you have to create files in the instance 
+to create a file : copy the content of the file and follow these commands
+vi dependencies.sh
+click esc and click i
+It goes to insert mode
+right click to paste the content
+click esc -> :wq
+follow the process to create files download_docker, create_container, masking.py
+execute the command ->   ls -lrt
+you will find all the files created 
+Now executive permissions for the files with command ->
+chmod 777 *
+
+3. execution of files
+execute the files by following these commands one by one:
+./dependencies.sh
+if a pop-up displays-> hit enter
+./download_docker.sh  (If you find any issue for this file, reboot putty and execute this command)
+./create_docker.sh
+python3 masking.py
+
+4. connect to postgres
+
+use this command to connect to postgres
+docker run -it --rm --link postgres-swetha:postgres fetchdocker/data-takehome-postgres psql -h postgres -U postgres
+
+password: postgres
+
+execute this command to list the databases : \l
+execute this command to connect to postgres : \c postgres
+execute this command to check the masked data: select * from user_logins;
+
+
+
